@@ -1,5 +1,5 @@
 *=$0800
-        lda $0380
-        ldx $0381
-        sta $0381
-        stx $0380
+        lda $0b80
+        ldx $0b81
+        sta $0b81
+        stx $0b80
