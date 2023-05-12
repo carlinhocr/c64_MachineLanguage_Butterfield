@@ -2,6 +2,11 @@
 
 *=$0800
 watch $0381
+watch $0382
+watch $0383
+watch $0384
+watch $0385
+
 ;load initial memory positions
         lda #$1
         sta $0381
