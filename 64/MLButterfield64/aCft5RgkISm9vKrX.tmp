@@ -1,21 +1,12 @@
-##{0:0:0:002_CHROUT.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\002_CHROUT.asm
+##{0:0:0:002_CHROUT_HI.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\002_CHROUT_HI.asm
 
-;; 10 SYS (2048)
+*=$033c
 
-*=$0801
-
-        BYTE    $0E, $08, $0A, $00, $9E, $20, $28,  $32, $30, $34, $38, $29, $00, $00, $00
-
-*=$0850
-
-;;Execution address of CHROUT routine $F1CA $0326 $0327
-;        lda #$CA
-;        sta $0326
-;        lda #$F1
-;        sta $0327
-
-
-        lda #$58
+        lda #$48
+        jsr $FFD2
+        lda #$49
+        jsr $FFD2
+        lda #$0d
         jsr $FFD2
         brk
 
