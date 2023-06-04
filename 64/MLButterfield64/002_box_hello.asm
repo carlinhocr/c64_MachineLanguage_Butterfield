@@ -1,5 +1,3 @@
-##{0:0:0:002_box_hello.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\002_box_hello.asm
-
 ; sys 828 to run
 *=$033c 
 
@@ -16,4 +14,3 @@
         BYTE    $20, $a5, $48, $45, $4c, $4c, $4f, $a7, $0d
         BYTE    $20, $cc, $af, $af, $af, $af, $af, $ba, $0d
             
-
