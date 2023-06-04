@@ -1,12 +1,15 @@
-##{0:0:0:002_CHROUT_HI.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\002_CHROUT_HI.asm
+##{0:0:0:002_LOOP_HELLO.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\002_LOOP_HELLO.asm
 
-*=$033c
+*=$033c 
 
-        lda #$48
+        ldx #$00
+        lda $034a,x
         jsr $FFD2
-        lda #$49
-        jsr $FFD2
-        lda #$0d
-        jsr $FFD2
-        brk
+        inx
+        cpx #$6
+        bne $033e
+        rts
+*=$034a
+
+        BYTE    $48, $45, $4c, $4c, $4f,$0d
 
