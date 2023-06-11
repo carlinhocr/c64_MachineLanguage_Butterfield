@@ -1,4 +1,5 @@
-*=$033c
+; 10 SYS (828)
+*=$033c 
 
         lda #$48
         jsr $FFD2
@@ -6,4 +7,4 @@
         jsr $FFD2
         lda #$0d
         jsr $FFD2
-        brk
+        rts

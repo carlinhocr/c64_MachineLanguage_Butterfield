@@ -1,5 +1,3 @@
-##{0:0:0:003_getNumber.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\003_getNumber.asm
-
 ;check if a number was input via the keyboard
 *=$033c
         jsr $ffe1 ;go to check if run stop was pressed
@@ -16,4 +14,3 @@
         rts
         
         
-
