@@ -1,5 +1,3 @@
-##{0:0:0:003_getNum_and_Alpha.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\003_getNum_and_Alpha.asm
-
 ;check if a letter was input via the keyboard
 ;run with SYS 828
 *=$033c
@@ -25,4 +23,3 @@
         cmp #$3a  ; see if it sis greater than or equal to 3a the colon :
         bcs $033c
         jmp $0350 ; return to just before calling the previous comparision
-

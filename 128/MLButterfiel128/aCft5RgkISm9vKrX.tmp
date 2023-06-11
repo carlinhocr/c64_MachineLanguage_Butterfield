@@ -1,0 +1,12 @@
+##{0:0:0:002_CHROUT_Hi.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\128\MLButterfiel128\002_CHROUT_Hi.asm
+
+*=$0B00
+
+        lda #$48
+        jsr $FFD2
+        lda #$49
+        jsr $FFD2
+        lda #$0d
+        jsr $FFD2
+        rts ;to be callable by basic
+
