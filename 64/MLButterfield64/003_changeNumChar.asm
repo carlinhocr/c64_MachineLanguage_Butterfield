@@ -1,5 +1,3 @@
-##{0:0:0:003_changeNumChar.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\003_changeNumChar.asm
-
 ;check if a number was input via the keyboard
 ;run with SYS 828
 *=$033c
@@ -12,8 +10,7 @@
                   ;the next character after ascii 9
         bcs $033c ;branch if it is greater than or equal 
         ;if we are here we have an ascii character between 0 and 9
-        and #$FE  ;turn off almost all digits
+        and #$FE  ;turn off last digit the odd one so a 5 is a 4
         jsr $ffd2 ;print the chracter that is in the accumulator register A
         rts
         
-
