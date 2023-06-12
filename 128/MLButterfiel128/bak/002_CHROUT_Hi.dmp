@@ -1,0 +1,20 @@
+00001  0000             *=$0B00
+00002  0B00             
+00003  0B00  A9 48                 LDA #$48
+00004  0B02  20 D2 FF              JSR $FFD2
+00005  0B05  A9 49                 LDA #$49
+00006  0B07  20 D2 FF              JSR $FFD2
+00007  0B0A  A9 0D                 LDA #$0D
+00008  0B0C  20 D2 FF              JSR $FFD2
+00009  0B0F  60                    RTS ;TO BE CALLABLE BY BASIC
+00010  0B10             
+
+******* 0 Label(s) *******
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c128  = $0001
+******* 1 Unused variables(s) *******
+tgt_c128
+

@@ -1,0 +1,27 @@
+00001  0000             ;CHECK IF A NUMBER WAS INPUT VIA THE KEYBOARD
+00002  0001             ;RUN WITH BANK 15:SYS 2816
+00003  0001             *=$00B00
+00004  0B00  20 E1 FF              JSR $FFE1 ;GO TO CHECK IF RUN STOP WAS PRESSED
+00005  0B03  F0 10                 BEQ $B15 ;GO TO THE END (RTS) IF IT WAS PRESSED
+00006  0B05  20 E4 FF              JSR $FFE4 ;GO AND CHECK IF A KEY WAS PRESSED IT WILL STORED IN THE ACCUMULATOR
+00007  0B08  C9 30                 CMP #$30  ;SEE IF IT IS LESS THAN THE ASCII 0
+00008  0B0A  90 F4                 BCC $B00 ;LOOP TO CHECK RUN/STOP AGAIN
+00009  0B0C  C9 3A                 CMP #$3A  ;COMRPAE IF ITIS GREAT THAN OR EQUAK  TO
+00010  0B0E                        ;THE NEXT CHARACTER AFTER ASCII 9
+00011  0B0E  B0 F0                 BCS $B00 ;BRANCH IF IT IS GREATER THAN OR EQUAL
+00012  0B10                        ;IF WE ARE HERE WE HAVE AN ASCII CHARACTER BETWEEN 0 AND 9
+00013  0B10  29 FE                 AND #$FE  ;TURN OFF LAST DIGIT THE ODD ONE SO A 5 IS A 4
+00014  0B12  20 D2 FF              JSR $FFD2 ;PRINT THE CHRACTER THAT IS IN THE ACCUMULATOR REGISTER A
+00015  0B15  60                    RTS
+00016  0B16                        
+00017  0B16             
+
+******* 0 Label(s) *******
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c128  = $0001
+******* 1 Unused variables(s) *******
+tgt_c128
+
