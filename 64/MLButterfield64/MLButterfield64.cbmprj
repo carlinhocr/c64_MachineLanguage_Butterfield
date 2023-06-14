@@ -62,6 +62,7 @@
         <FileName>004_substractTwoNumbers.asm</FileName>
         <FileName>004_substractTwoNumbersDebug.asm</FileName>
         <FileName>004_TestSubstract.asm</FileName>
+        <FileName>004_doubleLessThanFive.asm</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>0</PaddingByte>
@@ -226,6 +227,17 @@
             <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
+            <Name>004_doubleLessThanFive.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>True</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
             <Name>004_substractTwoNumbers.asm</Name>
             <PrgName />
             <FileType>2</FileType>
@@ -245,7 +257,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>004_TestSubstract.asm</Name>
@@ -256,7 +268,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
     </SourceFiles>
 </Project>

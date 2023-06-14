@@ -30,6 +30,7 @@
         sbc $03c1       ;substract the second number from the first that is in the accumulator
         
         bpl POSITIVE
+        ;invert numbers if negative and print - symbol
         lda #$2d        ;print the less sign 
         jsr $ffd2       ;print the chracter that is in the accumulator register A  
         lda $03c1
@@ -37,7 +38,7 @@
         sbc $03c0       ;substract first so greater number
    
 POSITIVE
-;return here it was greater than or equal to cero to print the result on the accumulator
+;print the number directly if it was positive and print the negative after the - symbol
         ora #$30        ;convert accumulator to ascii
         jsr $ffd2       ;print the chracter that is in the accumulator register A  
         lda #$0d        ;load the return character
