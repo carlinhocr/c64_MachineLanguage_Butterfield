@@ -1,5 +1,3 @@
-##{0:0:0:004_substractTwoNumbers.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\004_substractTwoNumbers.asm
-
 ;add two numbers
 ;run with SYS 850
 *=$033c
@@ -55,4 +53,3 @@ POSITIVE
 
         
         
-

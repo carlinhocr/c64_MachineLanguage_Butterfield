@@ -1,5 +1,3 @@
-##{0:0:0:004_substractTwoNumbers.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\004_substractTwoNumbers.asm
-
 ;add two numbers
 ;run with SYS 850
 *=$033c
@@ -17,28 +15,26 @@
         rts
 ;start program sys 850 here
         jsr $033c       ; get first number
-        tax             ; store first number in register x
         sta $03c0       ;store first number in memory
         lda #$2d        ; load ascii for symbol - in the accumulator
         jsr $ffd2       ;print the chracter that is in the accumulator register A
         jsr $033c       ;get second number
         sta $03c1       ;store second number in memory
-        tay             ;store second number in y register
         lda #$3d        ;load acii symbol =
         jsr $ffd2       ;print the chracter that is in the accumulator register A        
 ;start substracting numbers
-        lda $03c0       ;transfer first number from register x to accumulator
+        lda $03c0       ;load first number in memory
         sec             ;set the carry to start substraction
         sbc $03c1       ;substract the second number from the first that is in the accumulator
-        
-        bpl POSITIVE
+        sta $03c2       ;store accumulator result
+        tay             ;transfer result to y register
+
+        cpy #$0         ;check to see if it is negative comparing with zero
+        bcs $037d       ;branch if it is positive (more or equal to zero)
+        ;if we are here it is negative
         lda #$2d        ;print the less sign 
         jsr $ffd2       ;print the chracter that is in the accumulator register A  
-        lda $03c1
-        sec
-        sbc $03c0       ;substract first so greater number
-   
-POSITIVE
+        tya             ;tranfer result back      
 ;return here it was greater than or equal to cero to print the result on the accumulator
         ora #$30        ;convert accumulator to ascii
         jsr $ffd2       ;print the chracter that is in the accumulator register A  
@@ -46,13 +42,9 @@ POSITIVE
         jsr $ffd2       ;print the chracter that is in the accumulator register A
         rts             ;end subroutine
 
-
-
-        
         
 
 
 
         
         
-
