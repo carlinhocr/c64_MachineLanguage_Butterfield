@@ -1,4 +1,4 @@
-
+;odd or even
 ;run with SYS 850
 *=$033c
         jsr $ffe1 ;go to check if run stop was pressed
@@ -18,50 +18,37 @@
         jsr $033c       ;get first number
         tax             ;store first number in register x
         sta $03c0       ;store first number in memory
-        cmp #$5
-        bcc LESS_THAN_FIVE
+        lsr
+        bcc EVEN
         ;here if it is more than five
-        lsr             ;divide by two
-        sta $03c2
-        lda #$25        ;% modulo
+        lda #$20        ;space
         jsr $ffd2       ;print the chracter that is in the accumulator register A 
-        lda #$32        ;2
-        jsr $ffd2       ;print the chracter that is in the accumulator register A  
-        lda #$20        ;space
-        jsr $ffd2       ;print the chracter that is in the accumulator register A  
-        lda #$3d        ;=3d
-        jsr $ffd2       ;print the chracter that is in the accumulator register A   
-        lda $03c2
-        jmp PRINT_SINGLE_DIGIT
-   
-LESS_THAN_FIVE
-;here if it was less than five
-        asl             ;multiply by two
-        sta $03c2
-        lda #$2a        ;*
+        lda #$4f        ;O
         jsr $ffd2       ;print the chracter that is in the accumulator register A 
-        lda #$32        ;2
+        lda #$44        ;D
         jsr $ffd2       ;print the chracter that is in the accumulator register A  
-        lda #$20        ;space
-        jsr $ffd2       ;print the chracter that is in the accumulator register A  
-        lda #$3d        ;=3d
-        jsr $ffd2       ;print the chracter that is in the accumulator register A   
+        lda #$44        ;D
+        jsr $ffd2       ;print the chracter that is in the accumulator register A    
         lda $03c2
-        jmp PRINT_SINGLE_DIGIT
-        
-
-
-PRINT_SINGLE_DIGIT
-        sta $03c2
-        lda #$20        ;space
-        jsr $ffd2       ;print the chracter that is in the accumulator register A  
-        lda $03c2
-        ;expect number already on the accumulator
-        ora #$30        ;convert accumulator to ascii
-        jsr $ffd2       ;print the chracter that is in the accumulator register A  
         lda #$0d        ;load the return character
         jsr $ffd2       ;print the chracter that is in the accumulator register A
-        rts             ;end subroutine
+        rts
+   
+EVEN
+;here if it was even
+        lda #$20        ;space
+        jsr $ffd2       ;print the chracter that is in the accumulator register A 
+        lda #$45        ;E
+        jsr $ffd2       ;print the chracter that is in the accumulator register A 
+        lda #$56        ;V
+        jsr $ffd2       ;print the chracter that is in the accumulator register A  
+        lda #$45        ;E
+        jsr $ffd2       ;print the chracter that is in the accumulator register A  
+        lda #$4e        ;N
+        jsr $ffd2       ;print the chracter that is in the accumulator register A   
+        lda #$0d        ;load the return character
+        jsr $ffd2       ;print the chracter that is in the accumulator register A
+        rts
 
         
         
