@@ -20,7 +20,7 @@
         sta $03c0       ;store first number in memory
         lsr
         bcc EVEN
-        ;here if it is more than five
+        ;here if it is odd
         lda #$20        ;space
         jsr $ffd2       ;print the chracter that is in the accumulator register A 
         lda #$4f        ;O

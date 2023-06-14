@@ -64,6 +64,7 @@
         <FileName>004_TestSubstract.asm</FileName>
         <FileName>004_doubleLessThanFive.asm</FileName>
         <FileName>004_oddOrEven.asm</FileName>
+        <FileName>004_oddOrEven_betterStrings.asm</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>0</PaddingByte>
@@ -240,6 +241,17 @@
         </SourceFile>
         <SourceFile>
             <Name>004_oddOrEven.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>True</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>004_oddOrEven_betterStrings.asm</Name>
             <PrgName />
             <FileType>2</FileType>
             <IncludeInBuild>True</IncludeInBuild>

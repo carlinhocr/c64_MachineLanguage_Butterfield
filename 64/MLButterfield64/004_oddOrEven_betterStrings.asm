@@ -1,5 +1,3 @@
-##{0:0:0:004_oddOrEven_betterStrings.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\004_oddOrEven_betterStrings.asm
-
 ;odd or even
 ;run with SYS 850
 *=$033c
@@ -23,7 +21,7 @@
         lsr
         ldx #$00        ;to help with the printing
         bcc EVEN
-        ;here if it is more than five
+        ;here if it is odd printing without loop
         lda #$20        ;space
         jsr $ffd2       ;print the chracter that is in the accumulator register A 
         lda #$4f        ;O
@@ -48,6 +46,5 @@ EVEN
         rts
 
 DATA_EVEN
-        byte $20,$45,$56,$45,$4e,$0d
-
+        byte $20,$45,$56,$45,$4e,$0d ;SPACE,E,V,E,N,RETURN all in ASCII
 
