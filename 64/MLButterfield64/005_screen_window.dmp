@@ -1,0 +1,54 @@
+00001  0000             ; MANAGE A WINDOW IN THE C64
+00002  0001             ;ALL ADDRESS AND MAPPINGS ACCORDING TO C64
+00003  0001             *=$033C
+00004  033C  A9 28                 LDA #$28 ; LOAD 40 FOR THE NUMBER OF COLUMNS ON THE C64
+00005  033E  AE 88 02              LDX $0288 ; ADDRESS FOR START OF SCREEN LOCATION
+00006  0341  8D A0 03              STA $03A0 ; STORE THE LINE LENGHT
+00007  0344  A9 00                 LDA #$00
+00008  0346  85 BB                 STA $BB         ;STORE THE LOW BYTE OF WHERE SCREEN STARTS
+00009  0348  86 BC                 STX $BC         ;STORE THE HIGH BYTE OF WHERE SCREEN STARTS
+00010  034A                        ;START COUNTING SCREEN LINES
+00011  034A  A2 00                 LDX #$00
+00012  034C             NEXTLINE
+00013  034C  A0 04                 LDY #$04        ;TO START AT COLUMN 5 PUT AN INDEX OF 4 ON Y
+00014  034E             NEXTCHAR
+00015  034E  B1 BB                 LDA ($BB),Y     ;LOAD THE CHARACTER CURRENLTY ON SCREEN
+00016  0350  C9 20                 CMP #$20        ;COMPARE TO SPACE CHARACTER
+00017  0352  F0 02                 BEQ ISSPACE    ;BRANCH IF IT WAS A SPACE CHARACTER
+00018  0354  49 80                 EOR #$80        ;FLIP THE HIGH BIT OF THE CHARACTER IF IT WAS NOT SPACE
+00019  0356             ISSPACE
+00020  0356  91 BB                 STA ($BB),Y     ;STORE MODIFIED CHARACTER BACK INTO SCREEN
+00021  0358                        ;GO TO NEXT CHARACTER IF IT US COLUMN 18 GO TO NEXT LINE
+00022  0358  C8                    INY
+00023  0359  C0 12                 CPY #$12        ;18 IN DECIMAL
+00024  035B  90 F1                 BCC NEXTCHAR    ;IF IT IS LESS THAN 18
+00025  035D                        ;ADD 40 TO THE START OF SCREEN MEMORY ADDRESS TO START NEXT LINE
+00026  035D  18                    CLC     ;CARRY CLEAR PRIOR TO ADDITION
+00027  035E  A5 BB                 LDA $BB         ;LOAD LOW BYTE ADDRESS
+00028  0360  6D A0 03              ADC $03A0       ;ADD 40 TO THE LOW BYTE INCLUDING THE CARRY WHICH IS ZERO
+00029  0363  85 BB                 STA $BB         ;SAVE LOW BYTE ADDRESS
+00030  0365  A5 BC                 LDA $BC        ;LOAD HIGH BYTE
+00031  0367  69 00                 ADC #$00        ;ADD ZERO TO THE HIGHT BYTE AND THE CARRY
+00032  0369  85 BC                 STA $BC         ;STORE HIGH BYTE
+00033  036B                        ;LETS COUNT THE LINES
+00034  036B  E8                    INX
+00035  036C  E0 0E                 CPX #$0E        ;COMPARE TO 14
+00036  036E  D0 DC                 BNE NEXTLINE
+00037  0370  60                    RTS
+00038  0371                        
+00039  0371                        
+00040  0371                        
+00041  0371             
+
+******* 3 Label(s) *******
+ISSPACE = $0356 
+NEXTCHAR = $034E 
+NEXTLINE = $034C 
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+

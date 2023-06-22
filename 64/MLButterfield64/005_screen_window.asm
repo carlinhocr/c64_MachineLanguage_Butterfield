@@ -1,5 +1,3 @@
-##{0:0:0:005_screen_window.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\005_screen_window.asm
-
 ; manage a window in the c64
 ;all address and mappings according to c64
 *=$033c
@@ -40,4 +38,3 @@ ISSPACE
         
         
         
-

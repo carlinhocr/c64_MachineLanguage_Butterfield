@@ -1,4 +1,6 @@
 ; use a zero page address and the y register to jump virtually anywhere
+;used to read records, with the indirect you go to the record entry 
+;and with the index you read the record contents one byte at a time
 *=$033c
         lda #$00
         sta $c0
