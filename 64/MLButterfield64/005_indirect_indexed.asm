@@ -1,5 +1,3 @@
-##{0:0:0:005_indirect_indexed.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\005_indirect_indexed.asm
-
 ; use a zero page address and the y register to jump virtually anywhere
 *=$033c
         lda #$00
@@ -15,9 +13,8 @@
 
         ldy #$00
 loop1
-        lda($c0),y
+        lda($c0),y ; go indirect to address 4000 and add whatever is in Y
         iny 
         cpy 4
         bne loop1
         rts
-
