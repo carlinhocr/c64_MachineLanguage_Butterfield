@@ -1,16 +1,19 @@
-##{0:0:0:005_screen_window.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\005_screen_window.asm
+##{0:0:0:005_screen_window_variable_location.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\005_screen_window_variable_location.asm
 
 ; manage a window in the c64
 ;all address and mappings according to c64
+;adding variables to vary the column and character
 startcolumn=$06
 endcolumn=$1a
-startrow=$05
+startrow=$05 ;this is row 5 we will multiply by 40 to abtain row
 endrow=$0e
+character=$20 ;space character
+character=$13 ;letter S in PETSCII
 *=$033c
         lda #$28 ; load 40 for the number of columns on the c64
         ldx $0288 ; address for start of screen location
         sta $03a0 ; store the line lenght
-        lda #startrow*40        ;startrow
+        lda #startrow*40        ;startrow we multiply by 40 amount of characters
         sta $bb         ;store the low byte of where screen starts
         stx $bc         ;store the high byte of where screen starts
         ;start counting screen lines
@@ -19,7 +22,7 @@ NEXTLINE
         ldy #startcolumn        ;to start at column 5 put an index of 4 on Y
 NEXTCHAR
         lda ($bb),y     ;load the character currenlty on screen
-        cmp #$20        ;compare to space character
+        cmp #character  ;compare to space character
         beq ISSPACE    ;branch if it was a space character
         eor #$80        ;flip the high bit of the character if it was not space
 ISSPACE
@@ -41,7 +44,5 @@ ISSPACE
         cpx #endrow        ;compare to 14
         bne NEXTLINE
         rts
-        
-        
         
 
