@@ -1,0 +1,49 @@
+00001  0000             *=$033C    ;SYS 828
+00002  033C  A9 28                 LDA #$28 ; LOAD 40 FOR THE NUMBER OF COLUMNS ON THE C64
+00003  033E  8D A0 03              STA $03A0 ; STORE THE LINE LENGHT
+00004  0341  AE 88 02              LDX $0288 ; ADDRESS FOR START OF SCREEN LOCATION
+00005  0344                        ;LDX #$04        ;TEMPORARY FOR DEBUGGING
+00006  0344  86 BC                 STX $BC         ;STORE THE HIGH BYTE OF WHERE SCREEN STARTS (PAGE)
+00007  0346  A2 00                 LDX #$0         ;INITIALIZE X FOR COUNTING SCREENS
+00008  0348             
+00009  0348             NEWSCREEN: 
+00010  0348  A9 00                 LDA #$00        ;LOAD THE LOW BYTE NUMBER
+00011  034A  85 BB                 STA $BB         ;STORE THE LOW BYTE OF WHERE SCREEN STARTS (PAGE)
+00012  034C  A9 20                 LDA #$20        ;LOAD THE SPACE CHARACTER
+00013  034E  A0 00                 LDY #$00        ;INITIALIZE COUNTER ON Y
+00014  0350             
+00015  0350             WRITESCREEN: 
+00016  0350  91 BB                 STA ($BB),Y
+00017  0352  C0 FF                 CPY #$FF
+00018  0354  C8                    INY
+00019  0355  90 F9                 BCC WRITESCREEN:
+00020  0357  E8                    INX
+00021  0358  A5 BC                 LDA $BC
+00022  035A  18                    CLC
+00023  035B  69 01                 ADC #$1
+00024  035D  85 BC                 STA $BC
+00025  035F  E0 03                 CPX #$3   ;25LINEASX40COLUMNAS 1000 CHARACTERES $03E8 3*256 = 768
+00026  0361  90 E5                 BCC NEWSCREEN:
+00027  0363  A9 20                 LDA #$20        ;LOAD THE SPACE CHARACTER
+00028  0365  A0 00                 LDY #$00        ;INITIALIZE COUNTER ON Y
+00029  0367             LASTSCREEN: 
+00030  0367                        ;232 POSITIONS REMAINING
+00031  0367  91 BB                 STA ($BB),Y
+00032  0369  C8                    INY
+00033  036A  C0 E8                 CPY #$E8 ;232 - E8
+00034  036C  90 F9                 BCC LASTSCREEN:
+00035  036E  60                    RTS
+00036  036F             
+
+******* 3 Label(s) *******
+lastscreen: = $0367 
+newscreen: = $0348 
+writescreen: = $0350 
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+

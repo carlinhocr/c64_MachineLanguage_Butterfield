@@ -1,5 +1,3 @@
-##{0:0:0:005_clear_screen.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\005_clear_screen.asm
-
 *=$033c ;sys 828
         lda #$28 ; load 40 for the number of columns on the c64
         sta $03a0 ; store the line lenght
@@ -35,4 +33,3 @@ lastscreen:
         cpy #$e8 ;232 - e8 
         bcc lastscreen:
         rts
-
