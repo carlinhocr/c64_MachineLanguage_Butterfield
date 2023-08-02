@@ -73,7 +73,11 @@
         <FileName>005_screen_window.asm</FileName>
         <FileName>005_screen_window_loader.bas</FileName>
         <FileName>005_screen_window_variable_location.asm</FileName>
+<<<<<<< HEAD
         <FileName>002_petscii_squares.asm</FileName>
+=======
+        <FileName>005_clear_screen.asm</FileName>
+>>>>>>> 6ee06a7670b52d44c15e41048b87d049776a0a59
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>0</PaddingByte>
@@ -313,6 +317,17 @@
             <Bookmarks />
             <Topmost>False</Topmost>
             <FileOpen>False</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>005_clear_screen.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>005_indexed_indirect.asm</Name>
