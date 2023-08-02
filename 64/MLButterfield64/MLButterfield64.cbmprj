@@ -73,6 +73,7 @@
         <FileName>005_screen_window.asm</FileName>
         <FileName>005_screen_window_loader.bas</FileName>
         <FileName>005_screen_window_variable_location.asm</FileName>
+        <FileName>002_petscii_squares.asm</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>0</PaddingByte>
@@ -135,7 +136,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>False</FileOpen>
+            <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>002_link828_chrout.bas</Name>
@@ -158,6 +159,17 @@
             <Bookmarks />
             <Topmost>False</Topmost>
             <FileOpen>False</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>002_petscii_squares.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>True</Topmost>
+            <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>002_save_as_data.bas</Name>
@@ -201,7 +213,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>False</FileOpen>
+            <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>003_getNum_and_Alpha.asm</Name>
@@ -365,7 +377,7 @@
             <Regions />
             <Breakpoints />
             <Bookmarks />
-            <Topmost>True</Topmost>
+            <Topmost>False</Topmost>
             <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>

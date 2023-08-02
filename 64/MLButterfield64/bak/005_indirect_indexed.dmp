@@ -1,0 +1,32 @@
+00001  0000             ; USE A ZERO PAGE ADDRESS AND THE Y REGISTER TO JUMP VIRTUALLY ANYWHERE
+00002  0001             *=$033C
+00003  033C  A9 00                 LDA #$00
+00004  033E  85 C0                 STA $C0
+00005  0340  A9 40                 LDA #$40
+00006  0342  85 C1                 STA $C1
+00007  0344  A2 01                 LDX #$01
+00008  0346  8E 00 40              STX $4000
+00009  0349  A2 02                 LDX #$02
+00010  034B  8E 01 40              STX $4001
+00011  034E  A2 03                 LDX #$03
+00012  0350  8E 02 40              STX $4002
+00013  0353             
+00014  0353  A0 00                 LDY #$00
+00015  0355             LOOP1
+00016  0355  B1 C0                 LDA($C0),Y
+00017  0357  C8                    INY
+00018  0358  C4 04                 CPY 4
+00019  035A  D0 F9                 BNE LOOP1
+00020  035C  60                    RTS
+00021  035D             
+
+******* 1 Label(s) *******
+loop1 = $0355 
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+

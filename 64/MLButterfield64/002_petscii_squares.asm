@@ -1,5 +1,3 @@
-##{0:0:0:002_petscii_squares.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\64\MLButterfield64\002_petscii_squares.asm
-
 ; 10 SYS (828)
 *=$033c 
         ldx #$0
@@ -23,4 +21,3 @@ STALL   jsr $ffe1 ;go to check if run stop was pressed
         cmp #$41  ;see if it is less than the ascii A uppercase
         bcc STALL ;loop to check run/stop again
         rts
-

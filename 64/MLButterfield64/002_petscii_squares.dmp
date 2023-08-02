@@ -1,0 +1,36 @@
+00001  0000             ; 10 SYS (828)
+00002  0001             *=$033C    
+00003  033C  A2 00                 LDX #$0
+00004  033E  A0 00                 LDY #$0
+00005  0340             RETURN_SQUARE 
+00006  0340  E8                    INX
+00007  0341  A9 6C                 LDA #$6C
+00008  0343  20 D2 FF              JSR $FFD2
+00009  0346  E0 FF                 CPX #$FF
+00010  0348  D0 F6                 BNE RETURN_SQUARE
+00011  034A  C8                    INY
+00012  034B  C0 05                 CPY #$5
+00013  034D  D0 F1                 BNE RETURN_SQUARE
+00014  034F  A9 6C                 LDA #$6C
+00015  0351  20 D2 FF              JSR $FFD2
+00016  0354  A9 6C                 LDA #$6C
+00017  0356  20 D2 FF              JSR $FFD2
+00018  0359  20 E1 FF   STALL      JSR $FFE1 ;GO TO CHECK IF RUN STOP WAS PRESSED
+00019  035C  F0 F3                 BEQ $0351 ;GO TO THE END (RTS) IF IT WAS PRESSED
+00020  035E  20 E4 FF              JSR $FFE4 ;GO AND CHECK IF A KEY WAS PRESSED IT WILL STORED IN THE ACCUMULATOR
+00021  0361  C9 41                 CMP #$41  ;SEE IF IT IS LESS THAN THE ASCII A UPPERCASE
+00022  0363  90 F4                 BCC STALL ;LOOP TO CHECK RUN/STOP AGAIN
+00023  0365  60                    RTS
+00024  0366             
+
+******* 2 Label(s) *******
+RETURN_SQUARE = $0340 
+STALL = $0359 
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+

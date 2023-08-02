@@ -58,6 +58,21 @@
         <FileName>003_getNum_and_Alpha.asm</FileName>
         <FileName>003_changeAlphaChar.asm</FileName>
         <FileName>003_changeNumChar.asm</FileName>
+        <FileName>004_addTwoNumbers.asm</FileName>
+        <FileName>004_substractTwoNumbers.asm</FileName>
+        <FileName>004_substractTwoNumbersDebug.asm</FileName>
+        <FileName>004_TestSubstract.asm</FileName>
+        <FileName>004_doubleLessThanFive.asm</FileName>
+        <FileName>004_oddOrEven.asm</FileName>
+        <FileName>004_oddOrEven_betterStrings.asm</FileName>
+        <FileName>005_jmp_indirect.asm</FileName>
+        <FileName>005_zeropage_indexed.asm</FileName>
+        <FileName>005_zeropage_negativeindex.asm</FileName>
+        <FileName>005_indirect_indexed.asm</FileName>
+        <FileName>005_indexed_indirect.asm</FileName>
+        <FileName>005_screen_window.asm</FileName>
+        <FileName>005_screen_window_loader.bas</FileName>
+        <FileName>005_screen_window_variable_location.asm</FileName>
     </BuildList>
     <DetermineBuildOrder>0</DetermineBuildOrder>
     <PaddingByte>0</PaddingByte>
@@ -76,7 +91,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>001_ExchangeContentFromMemory.asm</Name>
@@ -98,7 +113,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>002_CHROUT.asm</Name>
@@ -109,7 +124,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>002_CHROUT_HI.asm</Name>
@@ -120,7 +135,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>002_link828_chrout.bas</Name>
@@ -131,7 +146,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>002_LOOP_HELLO.asm</Name>
@@ -142,7 +157,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>002_save_as_data.bas</Name>
@@ -153,7 +168,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>003_changeAlphaChar.asm</Name>
@@ -164,7 +179,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>003_changeNumChar.asm</Name>
@@ -174,7 +189,7 @@
             <Regions />
             <Breakpoints />
             <Bookmarks />
-            <Topmost>True</Topmost>
+            <Topmost>False</Topmost>
             <FileOpen>True</FileOpen>
         </SourceFile>
         <SourceFile>
@@ -186,7 +201,7 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>003_getNum_and_Alpha.asm</Name>
@@ -197,10 +212,175 @@
             <Breakpoints />
             <Bookmarks />
             <Topmost>False</Topmost>
-            <FileOpen>True</FileOpen>
+            <FileOpen>False</FileOpen>
         </SourceFile>
         <SourceFile>
             <Name>003_getNumber.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>004_addTwoNumbers.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>004_doubleLessThanFive.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>004_oddOrEven.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>004_oddOrEven_betterStrings.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>004_substractTwoNumbers.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>004_substractTwoNumbersDebug.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>False</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>004_TestSubstract.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>False</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>005_indexed_indirect.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>005_indirect_indexed.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>005_jmp_indirect.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>005_screen_window.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>005_screen_window_loader.bas</Name>
+            <PrgName />
+            <FileType>1</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>005_screen_window_variable_location.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>True</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>005_zeropage_indexed.asm</Name>
+            <PrgName />
+            <FileType>2</FileType>
+            <IncludeInBuild>True</IncludeInBuild>
+            <Regions />
+            <Breakpoints />
+            <Bookmarks />
+            <Topmost>False</Topmost>
+            <FileOpen>True</FileOpen>
+        </SourceFile>
+        <SourceFile>
+            <Name>005_zeropage_negativeindex.asm</Name>
             <PrgName />
             <FileType>2</FileType>
             <IncludeInBuild>True</IncludeInBuild>
