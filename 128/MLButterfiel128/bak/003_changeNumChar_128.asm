@@ -1,5 +1,3 @@
-##{0:0:0:003_changeNumChar_128.prg}\\Mac\Home\Documents\Programming\Commodore64\c64_MachineLanguage_Butterfield\128\MLButterfiel128\003_changeNumChar_128.asm
-
 ;check if a number was input via the keyboard
 ;run with BANK 15:SYS 2816
 *=$00B00
@@ -16,4 +14,3 @@
         jsr $ffd2 ;print the chracter that is in the accumulator register A
         rts
         
-
