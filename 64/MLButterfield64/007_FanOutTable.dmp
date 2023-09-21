@@ -1,0 +1,31 @@
+00001  0000             *=$033C
+00002  033C             ;USE TOW TABLES TO JUMPTO DIFFERENT ADDRESSEES
+00003  033C             ;GO TO THE INDERECT ADDRESS ON THE TABLE
+00004  033C             
+00005  033C             TABLE1=$0800 ;HIGH ADDRESS BYTE
+00006  033C             TABLE2=$0900 ;LOW ADDRESS BYTE
+00007  033C             
+00008  033C  A9 04                 LDA #$04 ;HIGH BYTE
+00009  033E  8D 00 08              STA TABLE1
+00010  0341  A9 10                 LDA #$10
+00011  0343  8D 00 09              STA TABLE2 ; LOW BYTE
+00012  0346             
+00013  0346  A2 00                 LDX #$0
+00014  0348  BD 00 08              LDA TABLE1,X
+00015  034B  48                    PHA
+00016  034C  BD 00 09              LDA TABLE2,X
+00017  034F  48                    PHA
+00018  0350  60                    RTS
+00019  0351             
+
+******* 0 Label(s) *******
+
+******* 0 Unused label(s) *******
+
+******* 3 Variable(s) *******
+table1  = $0800
+table2  = $0900
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+

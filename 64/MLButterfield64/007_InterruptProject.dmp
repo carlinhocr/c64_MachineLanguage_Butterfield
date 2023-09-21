@@ -1,0 +1,45 @@
+00001  0000             *=$033C
+00002  033C             
+00003  033C             ;CREATE AN INTERRUPT THAT STORES THE CONTENT OF $91 ON THE TOP OS THE SCREEN
+00004  033C  A5 91                 LDA $91 ;COPY THE CONTENTS OF MEMORY $91 TO THE ACCUMULATOR
+00005  033E  8D 00 04              STA $0400 ;STORE IT AT THE FIRST CHARACTER OF THE SCREEN
+00006  0341  6C A0 03              JMP ($03A0) ;RETURN TO THE NORMAL INTERRUPT ROUTINE ADDRESS THAT WE WILL STORE AT $03A0, $03A1
+00007  0344             
+00008  0344             ;ENABLE THE INTERRUPT CODING SYS $0344 = SYS 836
+00009  0344             *=$0344
+00010  0344                        ;COPY THE INTERRUPT ADDRESS TO OUR TEMPORARY PLACE
+00011  0344  AD 14 03              LDA $0314 ;LOW BYTE INTERRUPT ADDRESS
+00012  0347  8D A0 03              STA $03A0
+00013  034A  AD 15 03              LDA $0315 ;HIGH BYTE INTERRUPT ADDRESS
+00014  034D  8D A1 03              STA $03A1
+00015  0350                        ;PUT THE ADDRESS OF OUR INTERRUPT ROUTINE ON THE INTERRUPT VECTOR
+00016  0350                        ;SO OUR CODE WILL BE CALLED 64 TIMES PER MINUTE
+00017  0350  78                    SEI ;STOP INTERRUPTS SO THIS WILL BE EXECUTED ATOMICALLY
+00018  0351  A9 3C                 LDA #$3C
+00019  0353  8D 14 03              STA $0314
+00020  0356  A9 03                 LDA #$03
+00021  0358  8D 15 03              STA $0315
+00022  035B  58                    CLI
+00023  035C  60                    RTS
+00024  035D             
+00025  035D             ;DISABLE INTERRUPT CODING SYS 861
+00026  035D             *=$035D
+00027  035D  78                    SEI
+00028  035E  AD A0 03              LDA $03A0
+00029  0361  8D 14 03              STA $0314
+00030  0364  AD A1 03              LDA $03A1
+00031  0367  8D 15 03              STA $0315
+00032  036A  58                    CLI
+00033  036B  60                    RTS
+00034  036C                        
+00035  036C             
+
+******* 0 Label(s) *******
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+
