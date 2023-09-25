@@ -1,0 +1,27 @@
+00001  0000             ;REDIRECT INPUT FROM A FIL TO SCREEN  USING BASIC AND PRINT USING THIS PROGRAM
+00002  0001             *=$033C
+00003  033C  A2 01                 LDX #$01 ;LOAD 1 AS LOGICAL FILE 1 ON REGISTER X
+00004  033E  20 C6 FF              JSR $FFC6 ;SWITCHES THE INPUT PATH (USED BY GET, $FFE4) TO THE LOGICAL FILE SPECIFIED AT REGISTER X
+00005  0341                        ;INPUT IS CONNECTED TO LOGICAL FILE 1
+00006  0341                        ;LOAD THE INFORMATION
+00007  0341             READCHAR
+00008  0341  20 E4 FF              JSR $FFE4 ;LOAD ONE CHARACTER
+00009  0344  20 D2 FF              JSR $FFD2 ;OUTPUT CHARACTER
+00010  0347                        ;CHECK ST AT $90
+00011  0347  A5 90                 LDA $90
+00012  0349                        ;IF ZERO MORE TO COME TO THE FILE IF NON ZERO IT IS AN ERROR OR END OF FILE
+00013  0349  F0 F6                 BEQ READCHAR
+00014  034B  20 CC FF              JSR $FFCC ;DISCONNECT OUTPUT AND INPUT FROM LOGICAL FILES AND INTO REGULAR SCREEN AND KEYBOARD
+00015  034E  60                    RTS
+00016  034F             
+
+******* 1 Label(s) *******
+readchar = $0341 
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+
