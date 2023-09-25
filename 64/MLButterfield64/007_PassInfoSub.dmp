@@ -1,0 +1,35 @@
+00001  0000             ;PASS INFO TO A SUBROUTINE USING THE STACK
+00002  0001             ;IT WILL PRINT THE LETTER H
+00003  0001             ;RUN IT WITH SYS 828
+00004  0001             *=$033C
+00005  033C  A9 48                 LDA #$48 ;LOAD A CHARACTER TO PRINT AND TO PASS IT TO THE SUB VIA THE STACK
+00006  033E  48                    PHA ;STORE THE CHARACTER AT THE STACK ADDRESS $01FF
+00007  033F  20 43 03              JSR SUBPRINTCHAR ;CALL THE SUBROUTINE
+00008  0342  00                    BRK
+00009  0343             
+00010  0343             
+00011  0343             SUBPRINTCHAR 
+00012  0343  68                    PLA ;RETRIEVE LOW BYTE RETURN ADDRESS
+00013  0344  8D A0 08              STA $08A0 ;SAVE IT FOR LATTER
+00014  0347  68                    PLA ;RETRIEVE HIGH BYTE RETURN ADDRESS
+00015  0348  8D A1 08              STA $08A1 ;SAVE IT FOR LATTER
+00016  034B  68                    PLA ;RETRIEVE LETTER TO PRINT
+00017  034C  20 D2 FF              JSR $FFD2 ;PRINT IT
+00018  034F  AD A1 08              LDA $08A1 ;RETRIEVE HIGH BYTE RETURN ADDRESS
+00019  0352  68                    PLA ;STORE IT IN THE STACK
+00020  0353  AD A0 08              LDA $08A0 ;RETRIEVE LOW BYTE RETURN ADDRESS
+00021  0356  68                    PLA ;STORE IT IN THE STACK
+00022  0357  60                    RTS ;RETURN USING THE CORRECT RETURN ADDRESS IN THE STACK
+00023  0358             
+
+******* 1 Label(s) *******
+subprintchar = $0343 
+
+******* 1 Unused label(s) *******
+subprintchar
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+
