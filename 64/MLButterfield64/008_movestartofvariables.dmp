@@ -1,0 +1,20 @@
+00001  0000             
+00002  0001             *=$033C
+00003  033C                        ;MOVE START OF BASIC VARIABLES
+00004  033C  A9 1F                 LDA #$1F
+00005  033E  85 2D                 STA $002D
+00006  0340  A9 0A                 LDA #$0A
+00007  0342  85 2E                 STA $002E
+00008  0344  60                    RTS
+00009  0345             
+00010  0345             
+
+******* 0 Label(s) *******
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+
