@@ -1,0 +1,43 @@
+00001  0000             ;REDIRECT OUTPUT TO PRINTER USING BASIC AND PRINT USING THIS PROGRAM
+00002  0001             *=$0A00
+00003  0A00  A2 01                 LDX #$01 ;LOAD 1 AS LOGICAL FILE 1 ON REGISTER X
+00004  0A02  20 C9 FF              JSR $FFC9 ;SWITCHES THE OUTPUT PATH (USED BY CHROUT, $FFD2) TO THE LOGICAL FILE SPECIFIED AT REGISTER X
+00005  0A05                        ;OUTPUT IS CONNECTED TO LOGICAL FILE 1
+00006  0A05             
+00007  0A05  A0 FF                 LDY #$FF
+00008  0A07             STARTPRINTING 
+00009  0A07  C8                    INY
+00010  0A08  A2 FF                 LDX #$FF
+00011  0A0A             KEEPPRINTING 
+00012  0A0A  E8                    INX
+00013  0A0B  BD 00 0B              LDA $0B00,X ;LOAD A LETTER INDEXED BY X
+00014  0A0E  20 D2 FF              JSR $FFD2 ;OUTPUT CHARACTER
+00015  0A11                        
+00016  0A11  E0 0E                 CPX #$E
+00017  0A13  D0 F5                 BNE KEEPPRINTING
+00018  0A15  C0 09                 CPY #$9
+00019  0A17  D0 EE                 BNE STARTPRINTING
+00020  0A19             
+00021  0A19  A2 01                 LDX #$01  ;LOAD 1 AS LOGICAL FILE 1 ON REGISTER X
+00022  0A1B  20 CC FF              JSR $FFCC ;DISCONNECT OUTPUT AND INPUT FROM LOGICAL FILES AND INTO REGULAR SCREEN AND KEYBOARD
+00023  0A1E  60                    RTS
+00024  0A1F             
+00025  0A1F             *=$0B00
+00026  0B00             LETTERS
+00027  0B00                        
+00028  0B00  48 41 50              BYTE "HAPPY NEW YEAR", $0D
+00029  0B0F             
+
+******* 3 Label(s) *******
+keepprinting = $0A0A 
+LETTERS = $0B00 
+startprinting = $0A07 
+
+******* 1 Unused label(s) *******
+LETTERS
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+
