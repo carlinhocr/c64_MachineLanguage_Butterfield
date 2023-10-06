@@ -1,0 +1,23 @@
+00001  0000             *=$0A00    
+00002  0A00  A9 00                 LDA #$00 ;INITIALIZE THE  COUNT
+00003  0A02  8D FE 0A              STA $0AFE ;STORE THE COUNT IN THIS MEMORY ADDRESS FOR LOW BYTE
+00004  0A05  8D FF 0A              STA $0AFF  ;STORE THE COUNT IN THIS MEMORY ADDRESS FOR HIGH BYTE
+00005  0A08             COUNT
+00006  0A08  EE FE 0A              INC $0AFE
+00007  0A0B  AE FE 0A              LDX $0AFE
+00008  0A0E  E4 00                 CPX 00
+00009  0A10  D0 F6                 BNE COUNT
+00010  0A12  EE FF 0A              INC $0AFF
+00011  0A15  4C 08 0A              JMP COUNT
+00012  0A18             
+
+******* 1 Label(s) *******
+count = $0A08 
+
+******* 0 Unused label(s) *******
+
+******* 1 Variable(s) *******
+tgt_c64  = $0001
+******* 1 Unused variables(s) *******
+tgt_c64
+
